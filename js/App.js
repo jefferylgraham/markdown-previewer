@@ -5,8 +5,8 @@ marked.setOptions({
 const renderer = new marked.Renderer();
 const linkRenderer = renderer.link;
 renderer.link = (href, title, text) => {
-    const html = linkRenderer.call(renderer, href, title, text);
-    return html.replace(/^<a /, '<a target="_blank" rel="nofollow" ');
+  const html = linkRenderer.call(renderer, href, title, text);
+  return html.replace(/^<a /, '<a target="_blank" rel="nofollow" ');
 };
 
 const defaultText = `# Welcome to my React Markdown Previewer!
@@ -82,7 +82,7 @@ class App extends React.Component {
           {this.state.previewActive ? null : (
             <div
               id="editor-component"
-              className={this.state.editorActive ? "col-12" : "col-7"}
+              className={this.state.editorActive ? "active" : null}
             >
               <Header>
                 Editor
@@ -108,7 +108,7 @@ class App extends React.Component {
           {this.state.editorActive ? null : (
             <div
               id="preview-component"
-              className={this.state.previewActive ? "col-12" : "col-9"}
+              className={this.state.previewActive ? "acvtive" : null}
             >
               <Header>
                 Preview
